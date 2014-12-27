@@ -1,0 +1,32 @@
+<html>
+<head>
+<script type="text/javascript" language="javascript" src="jquery/jquery.js"></script>
+ <script>
+function saveSettings()
+{
+var selectedContextMenu=$('input[name:contextmenus]:checked').val();
+var bkg = chrome.extension.getBackgroundPage();
+if(selectedContextMenu=="context-disabled")
+{
+	chrome.contextMenus.update(bkg.contextMenuId,{"enabled":false});
+}
+if(selectedContextMenu=="context-enabled")
+{
+	chrome.contextMenus.update(bkg.contextMenuId,{"enabled":true});
+}
+
+}
+</script>
+</head>
+<body>
+<form name="settings">
+
+Context Menus (Its the menu when you right click): 
+<input type="radio" name="contextmenus" class="contextmenus" value="context-enabled"/> Enable 
+<input type="radio" name="contextmenus" class="contextmenus" value="context-disabled"/> Disable 
+<input type="button" name="update" id="update" value="Update" onclick="saveSettings()"/>
+
+</form>
+</body>
+
+</html>

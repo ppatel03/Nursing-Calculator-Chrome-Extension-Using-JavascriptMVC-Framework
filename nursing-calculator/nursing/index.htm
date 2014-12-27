@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+
+
+<script type="text/javascript" src="../steal/steal.js?nursing/index.js">
+
+</script>
+
+<div id="home-tabs-script">
+    <script type='text/ejs' id='home_tabs_view_ejs'>
+    <%for(var i = 0; i < this.length ; i++){%>
+           <div id="<%=this[i]['div_id']%>" class="<%=this[i]['div_class']%>" > <%=this[i]['name']%>
+           </div>              
+        <%}%>    
+    </script>
+</div>
+
+<div id="sub-menus-script">
+    <script type='text/ejs' id='submenus_tabs_ejs'>        
+    <%for(var i = 0; i < this.length ; i++){%>
+           <div id="<%=this[i]['div_id']%>" class="<%=this[i]['div_class']%>" > <%=this[i]['name']%>
+           </div>              
+        <%}%>    
+    </script>
+</div>
+
+<div id="breadcrumbs-script">
+    <script type='text/ejs' id='breadcrumbs_ejs'>
+		<%for(var i = 0; i < this.length ; i++)
+            {
+                var crumbId=this[i]['crumb_id']+"-link";
+                if(i==this.length-1)
+                {%>
+                <span id="<%=crumbId%>" class="<%=this[i]['crumb_class']%> "><span class="<%=this[i]['underline']%>"><%=this[i]['crumb_name']%></span></span>
+                <%}
+                else{%>		      
+                <span id="<%=crumbId%>" class="<%=this[i]['crumb_class']%>" ><span class="<%=this[i]['underline']%>"><%=this[i]['crumb_name']%></span> >> </span>                           
+        <%}
+            }%> 
+    </script>
+</div>
+
+<div id="form-generator-script">
+    <script type='text/ejs' id='form_generator_ejs'>    
+             
+    <%for(var i = 0; i < this.length ; i++){%>
+           <div class="form-field">
+           
+            <div class="field-name">
+           <%=this[i]['input_label']%>
+           </div>
+           <div class="field-input"> 
+           <input type="<%=this[i]['input_type']%>" name="<%=this[i]['name']%>" id="<%=this[i]['id']%>"  class="<%=this[i]['class']%>"          value="<%=this[i]['input_value']%>" 
+           <% 
+           if(this[i]['onclick']!=null)
+           {
+           %> onclick="<%=this[i]['onclick']%>" 
+           <%
+           } %> 
+           <% 
+           if(this[i]['checked']!=null)
+           {
+           %> checked 
+           <%
+           } %>          
+           />
+           <%
+           if(this[i]['tooltip']!=null)
+           {
+           %>
+           <span class="tooltip">&nbsp;&nbsp;<img id="<%=this[i]['id']%>_tooltip_img" src="images/tooltip.jpg" alt="tooltip" height="11" width="12"/></span><span class="tooltip_text" id="<%=this[i]['id']%>_tooltip_text" ><%=this[i]['tooltip']%></span>
+           <%
+           }
+           %>
+          <% 
+          var k=i+1;
+          if(k<this.length-1)
+          {        
+            if(this[k]['input_type']=="select")
+            {   
+                
+            %>
+            <select id="<%=this[k]['id']%>" class="<%=this[k]['class']%>">
+            <%
+            for(var j=0;j<this[k]['options'].length;j++)
+            {           
+            %>
+                <option value="<%=this[k]['options'][j]['option_value']%>"><%=this[k]['options'][j]['option_name']%></option>
+            <%}%>
+                </select>
+               
+            <%
+               
+            }
+          }%>
+             <div id="<%=this[i]['id']%>_validate" class="validator"></div>
+             
+             <%
+             // incremented later because our validate div contains "i" 
+             if(k<this.length-1)
+            {        
+                if(this[k]['input_type']=="select")
+                {
+                    i++;
+                }
+            }
+             
+             %>
+            </div>
+            </div>     
+        <% 
+          }%>               
+    </script>
+</div>
+
+<div id="result-generator-script">
+    <script type='text/ejs' id='result_generator_ejs'>
+    <div id="result_label">
+    Result : 
+    </div>
+    <div id="result_value">
+    <%=endResult%>
+    </div>
+    </script>
+    </div>
+    
+
+
+<div id="tabs-layout">
+    <div class="breadcrumbs">        
+    </div> 
+    <div class="home-tabs">    
+    </div>    
+    <div class="submenus-tabs">    
+    </div>
+    <div class="form-layout">
+        <div class="form">
+        </div>
+        <div class="calc-results">
+        </div>
+        <div class="calc-formulae">
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

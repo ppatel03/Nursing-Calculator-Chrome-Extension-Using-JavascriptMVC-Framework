@@ -1,0 +1,36 @@
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+
+
+<script type="text/javascript" src="../steal/steal.js?todos/index.js">
+
+</script>
+<div id="tabs-layout">
+    <div id="home-tabs">
+    <script type='text/ejs' id='home_tabs_view_ejs'>
+    <%for(var i = 0; i < this.length ; i++){%>
+           <div id="<%=this[i]['div_id']%>" class="<%=this[i]['div_class']%>" > <%=this[i]['name']%>
+           </div>              
+        <%}%>    
+    </script>
+    </div>
+    <div id="submenus-tabs">
+    <script type='text/ejs' id='submenus_tabs_ejs'>
+    <%for(var i = 0; i < this.length ; i++){%>
+           <div id="<%=this[i]['div_id']%>" class="<%=this[i]['div_class']%>" > <%=this[i]['name']%>
+           </div>              
+        <%}%>    
+    </script>
+    </div>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<html>
+
+<head>
+
+<title></title>
+<script>
+/*
+	For content script communication to show infobar and record user behaviour on infobar
+*/
+function listenToRequest(message,sender,sendResponse)
+{
+	alert(message.contentType);
+	chrome.experimental.infobars.show({tabId:sender.tab.id,path:message.contentType+"_infobar.html"}/*, 
+	function processCallBack()
+	{	
+		alert("I am in infobar callback");
+		
+		//sendJsonResponse(jsonResponse);
+		
+	}*/);
+
+	var jsonResponse={clickedItem:message.contentType};
+	sendResponse(jsonResponse);
+	
+}
+chrome.extension.onMessage.addListener(listenToRequest);
+/*
+	For desktop notification
+*/
+var notifications=webkitNotifications.createHTMLNotification('notifications.html');
+notifications.show();
+
+
+/*
+	For Omnibox
+*/
+chrome.omnibox.onInputStarted.addListener(function(){
+	//alert("user has started inputting");
+	console.log("user is unputing");
+});
+
+chrome.omnibox.setDefaultSuggestion({
+    description: '<url><match>rn</match></url> Search Registered Nurse'
+  });
+
+chrome.omnibox.onInputChanged.addListener(function( text,  suggest) {
+	 if (text.search('nurse') > -1) 
+	 {
+        var suggestions = [];
+
+        suggestions.push({ content: 'careers in registered nursing', description: 'Careers in Registered nurse - Rndegrees.net' });
+        suggestions.push({ content: 'careers in nursing', description: 'careers in nursing' });
+
+        suggest(suggestions);
+	}
+
+});  
+
+chrome.omnibox.onInputEntered.addListener(function(text) {
+ var url = "http://rndegrees.net/search/?q=" + text;  
+  chrome.tabs.getSelected(null, function(tab) {
+    chrome.tabs.update(tab.id, {url: url});
+  });
+});
+
+/*
+    For PageAction
+*/
+// Called when the url of a tab changes.
+function checkForValidUrl(tabId, changeInfo, tab) {
+  // If the letter 'g' is found in the tab's URL...
+  if (tab.url.indexOf('n') > -1) {
+    // ... show the page action.
+    chrome.pageAction.show(tabId);
+  }
+};
+// Listen for any changes to the URL of any tab.
+chrome.tabs.onUpdated.addListener(checkForValidUrl);
+
+
+/*
+    For ContextMenus
+*/
+
+ contextMenuId=chrome.contextMenus.create({"title":"View nursing resources",
+"contexts":["page", "selection", "image", "link"],
+"onclick":function(e) {
+          var url = e.pageUrl;
+          var landingUrl = "http://www.rndegrees.net";
+          
+          if (e.selectionText=="nursing" || e.selectionText=="nurse" ) {
+            // The user selected some text, put this in the message.
+            landingUrl += "/";
+          }
+          
+          if (e.selectionText=="blog" || e.selectionText=="resource" || e.selectionText=="articles" ) {
+            // The user selected some text, put this in the message.
+            landingUrl += "/blog";
+          }
+          if (e.selectionText=="news" ) {
+            // The user selected some text, put this in the message.
+            landingUrl += "/nursing-headline-news.php";
+          }
+          
+          if (e.mediaType === "image" || e.mediaType === "video") {
+            landingUrl += "/blog";
+          }
+          
+          if (e.linkUrl) {
+            // The user wants to buzz a link.
+            landingUrl += "/";
+          }         
+          
+          // Open the page up.
+           chrome.tabs.create(
+              {"url" : landingUrl });
+        }
+      });
+
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,217 @@
+body{
+	background:-moz-linear-gradient(#72D7E7, #1389C3) repeat scroll 0 0 transparent !important;
+	 filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr=#72D7E7, endColorstr=#1389C3);
+	 background: -webkit-gradient(linear, left top, left bottom, from(#72D7E7), to(#1389C3));
+     max-height : 1000px ;	    
+}
+
+#tabs-layout{
+width:500px;
+color:#FFFFFF;
+font-family: Cursive;
+overflow:hidden;
+}
+
+.home-tabs{
+font-size: 18px;
+font-weight: bold;
+}
+
+
+.calc-tabs{
+	cursor: pointer;
+    float: left;
+    height: 35px;
+    margin: 12px;
+    width: 35%;
+}
+.blue_layout{
+	background:-moz-linear-gradient(#198BDB , #171942 ) repeat scroll 0 0 transparent !important;
+	 filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr=#198BDB , endColorstr=#171942 );
+	 background: -webkit-gradient(linear, left top, left bottom, from(#198BDB ), to(#171942 ));	
+     border : 1px solid  #171942;
+	border-radius: 4px 4px 4px 4px;
+	-webkit-box-shadow: 0px 2px 2px #333;
+	padding-left: 16px;
+    padding-top: 7px;	
+}
+
+
+.orange_layout{
+	background:-moz-linear-gradient(#EAA800 , #AA4B0B ) repeat scroll 0 0 transparent !important;
+	 filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr=#EAA800 , endColorstr=#AA4B0B );
+	 background: -webkit-gradient(linear, left top, left bottom, from(#EAA800 ), to(#AA4B0B ));	
+	 border : 1px solid  #AA4B0B;
+	border-radius: 4px 4px 4px 4px;
+	-webkit-box-shadow: 0px 2px 2px #333;
+	padding-left: 16px;
+    padding-top: 7px;	
+}
+
+.green_layout{
+	background:-moz-linear-gradient(#82B41A  , #48640F  ) repeat scroll 0 0 transparent !important;
+	 filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr=#82B41A  , endColorstr=#48640F  );
+	 background: -webkit-gradient(linear, left top, left bottom, from(#82B41A  ), to(#48640F  ));	
+     border : 1px solid  #48640F;
+	border-radius: 4px 4px 4px 4px;
+	-webkit-box-shadow: 0px 2px 2px #333;
+	padding-left: 16px;
+    padding-top: 7px;
+}
+
+.form_design_layout{
+	background:-moz-linear-gradient(#198BDB , #171942  ) repeat scroll 0 0 transparent !important;
+	 filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr=#198BDB , endColorstr=#171942   );
+	 background: -webkit-gradient(linear, left top, left bottom, from(#198BDB ), to(#171942  ));	
+    border: 1px solid #171942;
+    border-radius: 4px 4px 4px 4px;
+    float: left;
+    margin-left: 10px;
+    margin-right: 14px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 16px;
+    padding-top: 10px;
+}
+
+input{
+width:100px;
+}
+
+#solve-button {
+    background: -moz-linear-gradient(#E4697B, maroon) repeat scroll 0 0 transparent !important;
+    filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr=#E4697B  , endColorstr=maroon  );
+	 background: -webkit-gradient(linear, left top, left bottom, from(#E4697B  ), to(maroon  ));
+    border: 1px solid maroon;
+    border-radius: 3px 3px 3px 3px;
+    color: white;
+    font-family: cursive;
+    font-size: 18px;
+    height: 28px;
+    width: 104px;
+    cursor:pointer;
+}
+
+.submenus-tabs{
+font-size: 18px;
+font-weight: bold;
+
+}
+
+.breadcrumbs{
+display:none;
+font-size:20px;
+font-weight : bold ;
+color: #800517;
+}
+
+.clinical{
+font-size:13px;
+}
+.conversion{
+font-size:13px;
+}
+.sub-calc-tabs{
+	width :40%;
+	float:left;
+    padding-bottom:9px;
+	margin:15px;
+	cursor:pointer;	
+}
+
+.crumb-underline{
+cursor:pointer;
+text-decoration:underline;
+}
+/*
+.form-layout{
+	background:-moz-linear-gradient(#82B41A  , #48640F  ) repeat scroll 0 0 transparent !important;
+	 filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr=#82B41A  , endColorstr=#48640F  );
+	 background: -webkit-gradient(linear, left top, left bottom, from(#82B41A  ), to(#48640F  ));	
+	
+	border-radius: 4px 4px 4px 4px;
+	-webkit-box-shadow: 0px 2px 2px #333;
+	padding-left: 16px;
+    padding-top: 7px;
+}
+*/
+.form-field{
+float: left;
+margin: 5px 5px 5px 15px;
+width: 100%;
+}
+.field-name{
+float: left;
+width: 45%;
+}
+.field-input{
+float: left;
+/*width: 50%;
+text-align: center;*/
+}
+
+.tooltip {
+
+}
+
+.tooltip img{
+cursor: pointer;
+margin-bottom: -4px;
+margin-left: -8px;
+margin-right: 5px;
+}
+.tooltip_text{
+    display:none;
+    background: -moz-linear-gradient(center top , #FFFF96, yellow) repeat scroll 0 0 transparent;
+    filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr=#FFFF96  , endColorstr=yellow  );
+	 background: -webkit-gradient(linear, left top, left bottom, from(#FFFF96  ), to(yellow  ));
+    color: black;
+    font-size: 10px;
+    height: 45px;
+    padding-left: 4px;
+    padding-top: 2px;
+    position: absolute;    
+    width: 100px;
+    border-radius:3px 3px 3px 3px;
+}
+.text-validator{
+font-size:14px;
+font-weight : bold ;
+}
+.text-field-validator{
+border:1px solid red;
+}
+
+.calc-results{
+border: 1px solid white;
+display: none;
+float: left;
+margin: 5px 5px 5px 20px;
+width: 92%;
+padding-left: 2px;
+}
+#result_label{
+float: left;
+width: 20%;
+}
+#result_value{
+float: left;
+
+}
+
+.calc-formulae{
+float: left;
+margin: 5px 5px 5px 20px;
+width: 92%;
+display : none ;
+border: 1px solid white;
+padding-left: 2px;
+}
+#formula_label{
+float: left;
+width: 20%;
+}
+#formula_value{
+float: left;
+
+}

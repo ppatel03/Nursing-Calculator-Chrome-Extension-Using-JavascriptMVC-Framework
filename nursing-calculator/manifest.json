@@ -1,0 +1,22 @@
+{
+  "name": "Nursing Calculator",
+  "version": "1.0",
+  "description": "Nursing Formulae and Calculations",
+  "background_page" : "background.html",
+  "options_page": "options.html",
+   "content_scripts": [
+    {
+      "matches": ["http://*/*"],
+      "js": ["jquery/jquery.js", "myscript.js"]
+    }
+  ],
+  "browser_action": {
+    "default_icon": "icon.png",
+	"popup": "nursing/index.htm"
+  },
+  "omnibox": { "keyword" : "nurse" },
+  "permissions": [
+    "contextMenus","tabs","notifications","experimental","http://rndegrees.net/*"
+  ]
+  
+}

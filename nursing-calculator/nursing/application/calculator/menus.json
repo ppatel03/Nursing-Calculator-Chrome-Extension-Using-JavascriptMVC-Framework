@@ -1,0 +1,8 @@
+[
+	{ "id": 1, "Latitude": "59.652128", "Longitude": "17.931746", "AirportName": "Stockholm, Arlanda"},
+	{ "id": 2, "Latitude": "55.611389", "Longitude": "12.641389", "AirportName": "Copenhagen, Kastrup"},
+	{ "id": 3, "Latitude": "60.202499", "Longitude": "11.083889", "AirportName": "Oslo, Gardermoen"},
+	{ "id": 4, "Latitude": "60.166667", "Longitude": "24.966667", "AirportName": "Helsinki, Vantaa"},
+	{ "id": 5, "Latitude": "49.016666", "Longitude": "2.550000", "AirportName": "Paris, Charles De Gaulle"},
+	{ "id": 6, "Latitude": "51.470342", "Longitude": "-0.453423", "AirportName": "London, Heathrow"}
+]
